@@ -1,0 +1,23 @@
+<%include ../layout/header %>
+
+     <div class="column">
+              <form class="ui form" action="login" method="post">
+                 <div class="field">
+                    <label>username</label>
+                    <input type="text" name="name" >
+                  </div>
+                  <div class="field">
+                    <label>password</label>
+                    <input type="password" name="password" >
+                  </div>
+                  <button class="ui button" type="submit">login</button>
+                </form>
+       
+          </div>
+          <%if(msg!=undefined){%>
+          <div class="row">
+    <p style="color:red;"><%=msg%></p>
+</div>
+    <%}%>
+
+<%include ../layout/footer %>

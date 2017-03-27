@@ -1,0 +1,36 @@
+ <html>
+    <head>
+        <title>home</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.9/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.9/semantic.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+    </head>
+    <body>
+        <div class="ui secondary pointing menu">
+          
+           <%if (!loggedIn){%>
+            <a class=" <%if(current=='login'){%>active<%}%> item" href="/users/login">
+            login
+          </a>
+            <a class=" <%if(current=='register'){%>active<%}%> item" href="/users/register">
+            register
+          </a>
+          <%}else{%>
+          <a class="<%if(current=='products'){%>active<%}%> item " href="/products">
+            products
+          </a>
+          <a class=" <%if(current=='add'){%>active<%}%>  item" href="/products/add" >
+            add product
+          </a>
+          <a class=" <%if(current=='search'){%>active<%}%> item" href="/products/search">
+            search prduct
+          </a>
+          <a class=" <%if(current=='logout'){%>active<%}%> item" href="/users/logout">
+            logout
+          </a>
+          <%}%>
+          
+        </div>
+        <div class="ui two column centered grid">

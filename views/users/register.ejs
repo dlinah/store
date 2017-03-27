@@ -1,0 +1,36 @@
+<%include ../layout/header %>
+
+     <div class="column">
+              <form class="ui form" action="register" method="post" enctype="multipart/form-data">
+                 <div class="field">
+                    <label>username</label>
+                    <input type="text" name="name" >
+                  </div>
+                  <div class="field">
+                    <label>password</label>
+                    <input type="password" name="password" >
+                  </div>
+                  
+                <div class="field">
+                    <label>renter password</label>
+                    <input type="password" name="repassword" >
+                  </div>
+                  <div class="field">
+                    <label>email</label>
+                    <input type="email" name="email" >
+                  </div>
+                  <div class="field">
+                    <label>avatar</label>
+                    <input type="file" name="avatar" >
+                  </div>
+                  <button class="ui button" type="submit">register</button>
+                </form>
+       
+          </div>
+          <%if(msg!=undefined){%>
+          <div class="row">
+    <p style="color:red;"><%=msg%></p>
+</div>
+    <%}%>
+
+<%include ../layout/footer %>

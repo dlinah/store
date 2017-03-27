@@ -1,0 +1,34 @@
+<%include ../layout/header %>
+<%if(!loggedIn){%>
+         <p>please log in frist</p>
+         <%}else{%>
+          <div class="column">
+              <form class="ui form" action="<%=id%>" method="post">
+                 
+                  <div class="field">
+                    <label>product name</label>
+                    <input type="text" name="name" >
+                  </div>
+                  <div class="field">
+                    <label>product desc</label>
+                    <input type="text" name="desc" >
+                  </div>
+                  <div class="field">
+                    <label>product price</label>
+                    <input type="text" name="price" >
+                  </div>
+                   <div class="field">
+                    <label>product category</label>
+                    <input type="text" name="categ" >
+                  </div>
+                  <div class="field">
+                    <label>product image</label>
+                    <input type="text" name="img" >
+                  </div>
+                  
+                  <button class="ui button" type="submit">Save</button>
+                </form>
+       
+          </div>
+         <%}%> 
+       <%include ../layout/footer %>

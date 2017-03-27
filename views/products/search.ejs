@@ -1,0 +1,49 @@
+<%include ../layout/header %>
+<%if(!loggedIn){%>
+         <p>please log in frist</p>
+         <%}else{%>
+          <div class="column">
+              <form class="ui form" action="search" method="post">
+                  <div class="field">
+                    <label>product id</label>
+                    <input type="text" name="name" placeholder="search by name">
+                  </div>
+                  <button class="ui button" type="submit">search</button>
+                </form>
+          </div>
+    <%if(post){%>
+    <div class="row">
+    <% list.forEach(function(pro){%>
+<div class="ui card">
+                  <div class="content ">
+        
+                        <img class="  ui image" src="<%=pro.img%>">
+                    
+                    <div class="left floated">
+                        <div class="header"><%=pro.name%></div>
+                        <div class="description">
+                          <p><%=pro.desc%></p>
+                        </div>
+                        <a class="ui red tag label"><%=pro.price%></a>
+                    </div>
+                  </div>
+                  <div class="extra content">
+                    <a href="/products/edit/<%=pro.id%>" class="left floated like">
+                      <i class="edit icon"></i>
+                      edit
+                    </a>
+                    <a href="/products/del/<%=pro.id%>" class="right floated star">
+                      <i class="delete icon"></i>
+                      delete
+                    </a>
+                  </div>
+                </div>
+                <%})%>
+</div>
+                <%}%>
+                         <%}%> 
+
+<%include ../layout/footer %>
+
+              
+          
